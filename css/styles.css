@@ -1,0 +1,193 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root{
+    --gradient: linear-gradient(hsl(6, 100%, 80%), hsl(335, 100%, 65%));
+    --Pale_Blue: hsl(243, 100%, 93%);
+    --Grayish_Blue: hsl(229, 7%, 55%);
+    --Dark_Blue: hsl(228, 56%, 26%);
+    --Very_Dark_Blue: hsl(229, 57%, 11%);
+}
+
+/* GENERAL STYLES */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Raleway';
+}
+body{
+    min-height: 100vh;
+    background-color: var(--Very_Dark_Blue);
+    background-image: url('../images/bg-mobile.png');
+    background-size: cover;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+section{
+    background-color: var(--Dark_Blue);
+    border-radius: 15px;
+}
+
+/* MAIN STYLES */
+main{
+    width: 100%;
+    min-width: 325px;
+    max-width: 950px;
+    margin: 0 1.5rem;
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+main section.fylo{
+    width: 100%;
+    min-width: 325px;
+    max-width: 350px;
+    padding: 45px 25px;
+    border-top-right-radius: 45%;
+
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+}
+section.fylo .logo{
+    width: 150px;
+}
+section.fylo article{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+section.fylo article div{
+    width: 50px;
+    height: 50px;
+    background-color: var(--Very_Dark_Blue);
+    border-radius: 10px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+section.information{
+    position: relative;
+    padding: 35px 25px;
+    padding-bottom: 60px;
+    width: 100%;
+    min-width: 325px;
+    max-width: 550px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+}
+section.information h1{
+    margin-bottom: 10px;
+    font-size: 1rem;
+    font-weight: 300;
+    color: var(--Pale_Blue);
+    text-align: center;
+}
+h1 span{
+    font-weight: bold;
+}
+section.information .progress_bar{
+    width: 100%;
+    height: 22px;
+    border-radius: 20px;
+    padding: 4px;
+    background-color: var(--Very_Dark_Blue);
+}
+.progress_bar .progress{
+    width: 80%;
+    height: 100%;
+    padding: 1px;
+    padding-right: 2px;
+    border-radius: 200px;
+    background-image: var(--gradient);
+}
+.progress .circle{
+    width: 12px;
+    height: 12px;
+    margin-left: auto;
+    background-color: var(--Pale_Blue);
+    border-radius: 50%
+}
+section.information .gigabytes{
+    width: 100%;
+    color: white;
+    font-weight: bold;
+
+    display: flex;
+    justify-content: space-between;
+}
+section.information .popup{
+    width: 65%;
+    height: 85px;
+    position: absolute;
+    top: 100%;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    border-radius: 15px;
+    background-color: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+.popup h2{
+    font-size: 2.5rem;
+}
+.popup p{
+    color: var(--Grayish_Blue);
+    font-weight: bold;
+}
+.popup .triangle{
+    display: none;
+}
+
+@media (min-width:1440px) {
+    body{
+        background-image: url('../images/bg-desktop.png');
+        background-size: cover;
+    }
+    main{
+        justify-content: space-between;
+    }
+    section.information{
+        margin-top: auto;
+        height: 175px;
+        padding: 25px;
+        /* padding-bottom: 35px; */
+    }
+    section.information h1{
+        text-align: left;
+    }
+    section.information .popup{
+        margin: 0;
+        width: 200px;
+
+        top: -60px;
+        left: 325px;
+    }
+    .popup .triangle{
+        display: block;
+        position: absolute;
+        width: 0;
+        height: 0;
+        border: 20px solid transparent;
+        border-top: 0;
+        border-bottom: 40px solid white;
+        transform: rotate(180deg) skew(20deg);
+
+        right: -7px;
+        bottom: -28px;
+    }
+}
